@@ -1,6 +1,6 @@
 # ClueBot 3 Deployment
 
-The bot runs as a [https://wikitech.wikimedia.org/wiki/Portal:Toolforge](Toolforge) job on Wikimedia Cloud Services.
+The bot runs as a [Toolforge](https://wikitech.wikimedia.org/wiki/Portal:Toolforge) job on Wikimedia Cloud Services.
 
 There is currently only 1 (production) instance of the bot.
 
@@ -23,10 +23,10 @@ Enter the value of your envvar (Hit Ctrl+C to cancel): <production password>
 
 ## Deployment
 
-The code is packaged as a container using pack (https://wikitech.wikimedia.org/wiki/Help:Toolforge/Building_container_images),
+The code is packaged as a container using pack ([https://wikitech.wikimedia.org/wiki/Help:Toolforge/Building_container_images](https://wikitech.wikimedia.org/wiki/Help:Toolforge/Building_container_images)),
 which is then deployed as a `continuous` job.
 
-Any tagged release will be deployed via GitHub actions using (`https://github.com/cluebotng/cluebot3/blob/main/fabfile.py`)(fabric).
+Any tagged release will be deployed via GitHub actions using [fabric](https://github.com/cluebotng/cluebot3/blob/main/fabfile.py).
 
 ## Manual deployment
 
@@ -37,6 +37,9 @@ Assuming `fabric` is installed locally, within the root of the `cluebot3` repo y
 * `fab deploy-jobs` - update only the `jobs` config
 
 Note: This requires SSH access to the tool user account.
+
+## Deployment logs
+The "component" fabric tasks will log to SAL via `dologmsg`, recent changes can be seen at [https://wikitech.wikimedia.org/wiki/Nova_Resource:Tools.cluebot3/SAL](https://wikitech.wikimedia.org/wiki/Nova_Resource:Tools.cluebot3/SAL).
 
 ## Troubleshooting
 
