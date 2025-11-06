@@ -8,3 +8,5 @@ It is intended as a long term replacement for external sources such as https://d
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   cluebot3/index
