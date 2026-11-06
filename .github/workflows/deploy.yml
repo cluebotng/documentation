@@ -14,7 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: ./.github/actions/setup-python-environment
+      - name: setup python
+        uses: infrabits/ci-setup-python@main
+        with:
+          install_dependencies: true
+          install_test_dependencies: false
+          install_tox: false
 
       - uses: actions/configure-pages@v5
 
