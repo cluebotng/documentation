@@ -1,5 +1,6 @@
 [project]
 name = "documentation"
+version = "0.0.0"
 requires-python = ">=3.15"
 dependencies = [
     "sphinx (>=9.2.0,<10.0.0)",
@@ -7,7 +8,10 @@ dependencies = [
 ]
 
 [tool.poetry]
-package-mode = false
+packages = [{ include = "scripts/build.py" }]
+
+[tool.poetry.build]
+script = "scripts/build.py"
 
 [tool.poetry.group.test.dependencies]
 tox = "^4.67.12"
@@ -21,5 +25,5 @@ doc8 = "^2.0.0"
 max-line-length = 120
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0", "sphinx>=9.2.0,<10.0.0"]
 build-backend = "poetry.core.masonry.api"
